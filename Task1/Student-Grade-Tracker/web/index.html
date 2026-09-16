@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Grade Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="header">
+            <h1>🎓 Student Grade Tracker</h1>
+            <p>Manage and analyze student academic performance</p>
+        </header>
+
+
+        <!-- ADD / UPDATE STUDENT -->
+        <section class="card">
+
+            <h2>➕ Add Student</h2>
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label for="studentName">
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter student name"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="rollNumber">
+                        Roll Number
+                    </label>
+
+                    <input
+                        type="number"
+                        id="rollNumber"
+                        placeholder="Enter roll number"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- SUBJECTS -->
+
+            <div class="section-heading">
+
+                <h3>📚 Subjects & Marks</h3>
+
+                <button
+                    type="button"
+                    class="add-subject-btn"
+                    onclick="addSubject()"
+                >
+                    + Add Subject
+                </button>
+
+            </div>
+
+
+            <div id="subjectsContainer">
+
+                <div class="subject-row">
+
+                    <input
+                        type="text"
+                        class="subject-name"
+                        placeholder="Subject name"
+                    >
+
+                    <input
+                        type="number"
+                        class="subject-mark"
+                        placeholder="Marks"
+                        min="0"
+                        max="100"
+                    >
+
+                    <button
+                        type="button"
+                        class="remove-btn"
+                        onclick="removeSubject(this)"
+                    >
+                        ✕
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM BUTTONS -->
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="save-btn"
+                    id="saveButton"
+                    onclick="addStudent()"
+                >
+                    Save Student
+                </button>
+
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelButton"
+                    onclick="cancelEdit()"
+                    style="display: none;"
+                >
+                    Cancel Edit
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- DASHBOARD STATISTICS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>👥</span>
+
+                <p>Total Students</p>
+
+                <h2 id="totalStudents">0</h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>📊</span>
+
+                <p>Class Average</p>
+
+                <h2 id="classAverage">0.00</h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>🏆</span>
+
+                <p>Highest Average</p>
+
+                <h2 id="highestAverage">0.00</h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>✅</span>
+
+                <p>Pass Rate</p>
+
+                <h2 id="passRate">0%</h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERFORMANCE OVERVIEW -->
+
+        <section class="performance-grid">
+
+            <!-- TOP PERFORMER -->
+
+            <div class="card top-performer-card">
+
+                <h2>🏆 Top Performer</h2>
+
+                <div id="topPerformer">
+
+                    <p>No students available.</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- GRADE DISTRIBUTION -->
+
+            <div class="card">
+
+                <h2>📊 Grade Distribution</h2>
+
+                <div
+                    id="gradeDistribution"
+                    class="grade-distribution"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STUDENTS TABLE -->
+
+        <section class="card">
+
+            <div class="section-heading">
+
+                <h2>👥 All Students</h2>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="search-input"
+                    placeholder="🔍 Search student..."
+                    oninput="displayStudents()"
+                >
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Roll No.</th>
+                            <th>Name</th>
+                            <th>Average</th>
+                            <th>Grade</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="studentsTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- STUDENT DETAILS MODAL -->
+
+    <div
+        id="studentModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                type="button"
+                class="close-btn"
+                onclick="closeModal()"
+            >
+                ✕
+            </button>
+
+            <div id="studentDetails"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
