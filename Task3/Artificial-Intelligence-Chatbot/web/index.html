@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartBot - AI FAQ Chatbot</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="bot-logo">🤖</div>
+
+                <div>
+                    <h2>SmartBot</h2>
+                    <p>AI FAQ Assistant</p>
+                </div>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                Online
+            </div>
+
+            <div class="sidebar-section">
+
+                <h3>What I can answer</h3>
+
+                <button class="quick-topic" onclick="sendQuickMessage('What is Java?')">
+                    ☕ Java
+                </button>
+
+                <button class="quick-topic" onclick="sendQuickMessage('What is DSA?')">
+                    🧠 DSA
+                </button>
+
+                <button class="quick-topic" onclick="sendQuickMessage('Tell me about internships')">
+                    💼 Internships
+                </button>
+
+                <button class="quick-topic" onclick="sendQuickMessage('Tell me about projects')">
+                    💻 Projects
+                </button>
+
+                <button class="quick-topic" onclick="sendQuickMessage('What can you do?')">
+                    ❓ Help
+                </button>
+
+            </div>
+
+            <div class="sidebar-footer">
+                <p>Rule-Based NLP Chatbot</p>
+                <small>Java • NLP • OOP • File I/O</small>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Chat -->
+        <main class="chat-container">
+
+            <header class="chat-header">
+
+                <div class="bot-profile">
+                    <div class="profile-icon">🤖</div>
+
+                    <div>
+                        <h1>SmartBot</h1>
+                        <p>AI FAQ Chatbot</p>
+                    </div>
+                </div>
+
+                <button class="clear-btn" onclick="clearChat()">
+                    Clear Chat
+                </button>
+
+            </header>
+
+
+            <!-- Chat Messages -->
+            <section class="chat-messages" id="chatMessages">
+
+                <div class="message bot-message">
+
+                    <div class="avatar">🤖</div>
+
+                    <div class="message-content">
+
+                        <div class="message-name">
+                            SmartBot
+                        </div>
+
+                        <div class="bubble">
+                            Hello! 👋 I'm SmartBot.
+                            <br><br>
+                            I can answer questions about
+                            <strong>Java, DSA, internships,
+                            college and projects.</strong>
+                            <br><br>
+                            How can I help you?
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Suggested Questions -->
+            <div class="suggestions">
+
+                <button onclick="sendQuickMessage('What is Java?')">
+                    What is Java?
+                </button>
+
+                <button onclick="sendQuickMessage('What is DSA?')">
+                    What is DSA?
+                </button>
+
+                <button onclick="sendQuickMessage('What is an internship?')">
+                    Internship?
+                </button>
+
+            </div>
+
+
+            <!-- Input -->
+            <footer class="chat-input-area">
+
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask SmartBot something..."
+                    autocomplete="off"
+                >
+
+                <button id="sendButton" onclick="sendMessage()">
+                    ➤
+                </button>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
