@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grand Stay | Hotel Reservation System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+
+        <div class="logo">
+            🏨 <span>Grand Stay</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#rooms">Rooms</a>
+            <a href="#booking">Book Now</a>
+            <a href="#bookings">My Bookings</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="welcome">WELCOME TO GRAND STAY</p>
+
+            <h1>
+                Find Your Perfect
+                <span>Stay</span>
+            </h1>
+
+            <p class="hero-text">
+                Comfortable rooms, excellent service and
+                memorable experiences — all in one place.
+            </p>
+
+            <button class="primary-btn" onclick="scrollToRooms()">
+                🔍 Explore Rooms
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ROOM CATEGORIES ================= -->
+    <section class="rooms-section" id="rooms">
+
+        <div class="section-heading">
+
+            <p class="small-title">OUR ROOMS</p>
+
+            <h2>
+                Choose Your <span>Perfect Room</span>
+            </h2>
+
+            <p>
+                Select from our comfortable and affordable
+                room categories.
+            </p>
+
+        </div>
+
+
+        <div class="room-container">
+
+
+            <!-- STANDARD ROOM -->
+            <div class="room-card">
+
+                <div class="room-icon">
+                    🛏️
+                </div>
+
+                <div class="room-content">
+
+                    <span class="room-tag">
+                        STANDARD
+                    </span>
+
+                    <h3>Standard Room</h3>
+
+                    <p>
+                        A comfortable room with essential
+                        facilities for a relaxing stay.
+                    </p>
+
+                    <div class="room-price">
+                        ₹1,500
+                        <span>/ night</span>
+                    </div>
+
+                    <button
+                        class="book-btn"
+                        onclick="selectRoom('Standard', 1500)">
+                        Book Now
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- DELUXE ROOM -->
+            <div class="room-card featured">
+
+                <div class="popular">
+                    MOST POPULAR
+                </div>
+
+                <div class="room-icon">
+                    🌟
+                </div>
+
+                <div class="room-content">
+
+                    <span class="room-tag">
+                        DELUXE
+                    </span>
+
+                    <h3>Deluxe Room</h3>
+
+                    <p>
+                        Spacious and elegant room with
+                        enhanced comfort and facilities.
+                    </p>
+
+                    <div class="room-price">
+                        ₹2,500
+                        <span>/ night</span>
+                    </div>
+
+                    <button
+                        class="book-btn"
+                        onclick="selectRoom('Deluxe', 2500)">
+                        Book Now
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUITE ROOM -->
+            <div class="room-card">
+
+                <div class="room-icon">
+                    👑
+                </div>
+
+                <div class="room-content">
+
+                    <span class="room-tag">
+                        SUITE
+                    </span>
+
+                    <h3>Luxury Suite</h3>
+
+                    <p>
+                        Premium suite designed for guests
+                        looking for a luxurious experience.
+                    </p>
+
+                    <div class="room-price">
+                        ₹4,000
+                        <span>/ night</span>
+                    </div>
+
+                    <button
+                        class="book-btn"
+                        onclick="selectRoom('Suite', 4000)">
+                        Book Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BOOKING SECTION ================= -->
+    <section class="booking-section" id="booking">
+
+        <div class="section-heading">
+
+            <p class="small-title">RESERVATION</p>
+
+            <h2>
+                Make Your <span>Reservation</span>
+            </h2>
+
+        </div>
+
+
+        <div class="booking-box">
+
+            <form id="bookingForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Customer Name</label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Phone Number</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Room Category</label>
+
+                        <select id="roomCategory" required>
+
+                            <option value="">
+                                Select Room
+                            </option>
+
+                            <option value="Standard">
+                                Standard - ₹1,500/night
+                            </option>
+
+                            <option value="Deluxe">
+                                Deluxe - ₹2,500/night
+                            </option>
+
+                            <option value="Suite">
+                                Suite - ₹4,000/night
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Number of Nights</label>
+
+                        <input
+                            type="number"
+                            id="nights"
+                            min="1"
+                            value="1"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Check-in Date</label>
+
+                        <input
+                            type="date"
+                            id="checkIn"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Check-out Date</label>
+
+                        <input
+                            type="date"
+                            id="checkOut"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Payment Method</label>
+
+                    <select id="paymentMethod" required>
+
+                        <option value="">
+                            Select Payment Method
+                        </option>
+
+                        <option value="UPI">
+                            UPI
+                        </option>
+
+                        <option value="Card">
+                            Card
+                        </option>
+
+                        <option value="Cash">
+                            Cash
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TOTAL -->
+                <div class="total-box">
+
+                    <span>Total Amount</span>
+
+                    <strong id="totalAmount">
+                        ₹1,500
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="confirm-btn">
+
+                    💳 Confirm Reservation
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BOOKINGS SECTION ================= -->
+    <section class="bookings-section" id="bookings">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                RESERVATION HISTORY
+            </p>
+
+            <h2>
+                My <span>Bookings</span>
+            </h2>
+
+        </div>
+
+
+        <div id="bookingsList" class="bookings-list">
+
+            <div class="empty-bookings">
+
+                <div class="empty-icon">
+                    📋
+                </div>
+
+                <h3>No Bookings Yet</h3>
+
+                <p>
+                    Your reservations will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <div class="footer-logo">
+            🏨 Grand Stay
+        </div>
+
+        <p>
+            Hotel Reservation System
+        </p>
+
+        <p class="copyright">
+            © 2026 Grand Stay. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= SUCCESS MODAL ================= -->
+    <div id="successModal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>
+                Reservation Successful!
+            </h2>
+
+            <p>
+                Your hotel reservation has been confirmed.
+            </p>
+
+            <div id="bookingResult"></div>
+
+            <button
+                class="confirm-btn"
+                onclick="closeModal()">
+
+                View My Booking
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
